@@ -1,2 +1,9 @@
 ---
-# handlers file for openvpn
+- name: Restart openvpn
+  service:
+    name: openvpn@server
+    state: restarted
+
+- name: Reload cfg
+  sysctl:
+    reload: yes
